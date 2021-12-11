@@ -1,0 +1,17 @@
+NodeJS -> E-Commerce API Server 
+Minimun Requirement 
+-> NodeJS Install ( npm => Node Package Manager )
+
+1. Project Node Project ( npm init )
+
+2. Libraries 
+   npm install express ( ExpressJS )
+   npm i express
+   npm uninstall express
+
+3. Create app.js (main => app.js )
+
+// http:127.0.0.1:3000/
+// http:localhost:3000/
+
+env => Environment => dotenv
