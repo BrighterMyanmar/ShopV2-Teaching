@@ -14,4 +14,28 @@ Minimun Requirement
 // http:127.0.0.1:3000/
 // http:localhost:3000/
 
+// Fallback Route
+app.use((req, res) => { 
+   res.json({ con: false, msg: "No route Buddy!" });
+});
+
 env => Environment => dotenv
+
+database => 
+Routing System => 
+
+database ( RDBMS ) => Mysql => SQL => Manupulate 
+database (NoSQL => JSON Database (MongoDB) ) => CPU => AWS => 1 M 2 M
+
+Install MongoDB => Mongoose 
+
+DB_NAME=SHOPV2 
+-> Category  -> Schema -> 
+-> SubCategory
+-> ChildCategory
+-> Tag
+-> User 
+-> Role 
+-> Permission
+
+
