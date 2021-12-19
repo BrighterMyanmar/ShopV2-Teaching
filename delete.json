@@ -1,0 +1,111 @@
+{
+   "subcats": [
+      {
+         "childcats": [
+            {
+               "_id": "61626446b2a6ae9fa9a29c17",
+               "name": "Purse",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be3",
+               "created": "2021-10-10T03:55:50.339Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c18",
+               "name": "Skirt",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be3",
+               "created": "2021-10-10T03:55:50.339Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c19",
+               "name": "Bracelet",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be3",
+               "created": "2021-10-10T03:55:50.339Z",
+               "__v": 0
+            }
+         ],
+         "_id": "61626446b2a6ae9fa9a29be3",
+         "name": "Women Ware",
+         "image": "https://picsum.photos/300/250",
+         "catid": "61626446b2a6ae9fa9a29b7e",
+         "created": "2021-10-10T03:55:50.198Z",
+         "__v": 0
+      },
+      {
+         "childcats": [
+            {
+               "_id": "61626446b2a6ae9fa9a29c1d",
+               "name": "Diper",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be4",
+               "created": "2021-10-10T03:55:50.346Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c1e",
+               "name": "Scandle",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be4",
+               "created": "2021-10-10T03:55:50.346Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c1f",
+               "name": "Amulet",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be4",
+               "created": "2021-10-10T03:55:50.347Z",
+               "__v": 0
+            }
+         ],
+         "_id": "61626446b2a6ae9fa9a29be4",
+         "name": "Kid Ware",
+         "image": "https://picsum.photos/300/250",
+         "catid": "61626446b2a6ae9fa9a29b7e",
+         "created": "2021-10-10T03:55:50.199Z",
+         "__v": 0
+      },
+      {
+         "childcats": [
+            {
+               "_id": "61626446b2a6ae9fa9a29c11",
+               "name": "Hats",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be2",
+               "created": "2021-10-10T03:55:50.335Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c12",
+               "name": "Shirt",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be2",
+               "created": "2021-10-10T03:55:50.336Z",
+               "__v": 0
+            },
+            {
+               "_id": "61626446b2a6ae9fa9a29c13",
+               "name": "Shoes",
+               "image": "/https://picsum.photos/300/250",
+               "subcatid": "61626446b2a6ae9fa9a29be2",
+               "created": "2021-10-10T03:55:50.336Z",
+               "__v": 0
+            }
+         ],
+         "_id": "61626446b2a6ae9fa9a29be2",
+         "name": "Man Ware",
+         "image": "/https://picsum.photos/300/250",
+         "catid": "61626446b2a6ae9fa9a29b7e",
+         "created": "2021-10-10T03:55:50.198Z",
+         "__v": 0
+      }
+   ],
+   "_id": "61626446b2a6ae9fa9a29b7e",
+   "name": "Clothing",
+   "image": "https://picsum.photos/300/250",
+   "created": "2021-10-10T03:55:50.014Z",
+   "__v": 0
+}

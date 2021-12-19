@@ -1,5 +1,6 @@
 const DB = require('../models/category');
 const Helper = require('../utils/helper');
+const { deleteFile } = require('../utils/gallery');
 
 let all = async (req, res, next) => {
    let result = await DB.find();
@@ -37,6 +38,7 @@ let patch = async (req, res, next) => {
 let drop = async (req, res, next) => {
    let dbCat = await DB.findById(req.params.id);
    if (dbCat) {
+      await deleteFile(dbCat.image);
       await DB.findByIdAndDelete(dbCat._id);
       Helper.fMsg(res, "Category Dropped");
    } else {

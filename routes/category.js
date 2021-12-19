@@ -1,9 +1,11 @@
 const router = require('express').Router();
+const { saveSingleFile } = require('../utils/gallery');
 
 const controller = require('../controllers/category');
 
 router.get('/', controller.all);
-router.post('/', controller.add);
+
+router.post('/', saveSingleFile, controller.add);
 
 router.route("/:id")
    .get(controller.get)
