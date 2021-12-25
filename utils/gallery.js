@@ -26,7 +26,7 @@ let deleteFile = async (filename) => {
 }
 
 let deleteMultipleFile = async (filenames) => {
-   filenames.forEach(filename => {
+   filenames.forEach(async filename => {
       await deleteFile(filename);
    });
 }

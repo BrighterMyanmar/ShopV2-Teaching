@@ -12,10 +12,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB_NAME}`);
 
-
 let catRouter = require('./routes/category');
+let subcatRouter = require('./routes/subcat');
+let chidcatRouter = require('./routes/childcat');
 
 app.use('/cats', catRouter);
+app.use('/subcats', subcatRouter);
+app.use('/childcats', chidcatRouter);
 
 app.use((err, req, res, next) => {
    err.status = err.status || 303;
