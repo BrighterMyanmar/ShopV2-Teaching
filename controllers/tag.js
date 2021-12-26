@@ -1,19 +1,10 @@
-const DB = require('../models/category');
+const DB = require('../models/tag');
 const Helper = require('../utils/helper');
 const { deleteFile } = require('../utils/gallery');
-const SubCat = require('../models/subcat');
-const Childcat = require('../models/childcat');
 
 let all = async (req, res, next) => {
-   let result = await DB.find().populate({
-      path: 'subcats',
-      model: SubCat,
-      populate: {
-         path: 'childcats',
-         model: Childcat
-      }
-   });
-   Helper.fMsg(res, "All Categories", result);
+   let result = await DB.find();
+   Helper.fMsg(res, "All Tags", result);
 }
 
 let get = async (req, res, next) => {
@@ -21,14 +12,14 @@ let get = async (req, res, next) => {
    if (result) {
       Helper.fMsg(res, "Single Category", result);
    } else {
-      next(new Error("No Category with that id"));
+      next(new Error("No Tag with that id"));
    }
 }
 
 let add = async (req, res, next) => {
    let saveData = new DB(req.body);
    let result = await saveData.save();
-   Helper.fMsg(res, "Category Created");
+   Helper.fMsg(res, "Tag Created");
 }
 
 let patch = async (req, res, next) => {
@@ -38,9 +29,9 @@ let patch = async (req, res, next) => {
       dbCat.image = req.body.image;
       await DB.findByIdAndUpdate(dbCat._id, dbCat);
       let result = await DB.findById(dbCat._id);
-      Helper.fMsg(res, "Category Updated", result);
+      Helper.fMsg(res, "Tag Updated", result);
    } else {
-      next(new Error("No Category with that id"));
+      next(new Error("No Tag with that id"));
    }
 }
 
@@ -49,9 +40,9 @@ let drop = async (req, res, next) => {
    if (dbCat) {
       await deleteFile(dbCat.image);
       await DB.findByIdAndDelete(dbCat._id);
-      Helper.fMsg(res, "Category Dropped");
+      Helper.fMsg(res, "Tag Dropped");
    } else {
-      next(new Error("No Category with that id"));
+      next(new Error("No Tag with that id"));
    }
 }
 

@@ -15,10 +15,16 @@ mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB_NAME}`);
 let catRouter = require('./routes/category');
 let subcatRouter = require('./routes/subcat');
 let chidcatRouter = require('./routes/childcat');
+let tagRouter = require('./routes/tag');
+let permitRouter = require('./routes/permit');
+let roleRouter = require('./routes/role');
 
 app.use('/cats', catRouter);
 app.use('/subcats', subcatRouter);
 app.use('/childcats', chidcatRouter);
+app.use('/tags', tagRouter);
+app.use('/permits', permitRouter);
+app.use('/roles', roleRouter);
 
 app.use((err, req, res, next) => {
    err.status = err.status || 303;

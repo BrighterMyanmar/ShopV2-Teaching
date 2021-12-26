@@ -39,3 +39,11 @@ DB_NAME=SHOPV2
 -> Permission
 
 
+Resful Server 
+Role 
+ -> Model 
+ -> Controller 
+ -> Route 
+ -> Register (app.js)
+
+
