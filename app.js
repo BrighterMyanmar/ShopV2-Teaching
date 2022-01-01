@@ -18,6 +18,9 @@ let chidcatRouter = require('./routes/childcat');
 let tagRouter = require('./routes/tag');
 let permitRouter = require('./routes/permit');
 let roleRouter = require('./routes/role');
+let deliveryRouter = require('./routes/delivery');
+let warrantyRouter = require('./routes/warranty');
+let productRouter = require('./routes/product');
 
 app.use('/cats', catRouter);
 app.use('/subcats', subcatRouter);
@@ -25,6 +28,9 @@ app.use('/childcats', chidcatRouter);
 app.use('/tags', tagRouter);
 app.use('/permits', permitRouter);
 app.use('/roles', roleRouter);
+app.use('/deliveries', deliveryRouter);
+app.use('/warranties', warrantyRouter);
+app.use('/products', productRouter);
 
 app.use((err, req, res, next) => {
    err.status = err.status || 303;
