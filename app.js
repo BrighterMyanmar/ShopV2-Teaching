@@ -21,6 +21,7 @@ let roleRouter = require('./routes/role');
 let deliveryRouter = require('./routes/delivery');
 let warrantyRouter = require('./routes/warranty');
 let productRouter = require('./routes/product');
+let apiRouter = require('./routes/api');
 
 app.use('/cats', catRouter);
 app.use('/subcats', subcatRouter);
@@ -31,6 +32,7 @@ app.use('/roles', roleRouter);
 app.use('/deliveries', deliveryRouter);
 app.use('/warranties', warrantyRouter);
 app.use('/products', productRouter);
+app.use('/api', apiRouter);
 
 app.use((err, req, res, next) => {
    err.status = err.status || 303;

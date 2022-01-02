@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const { saveMultipleFile } = require('../utils/gallery');
 const controller = require('../controllers/product');
 
 router.get('/', controller.all);
 
-// router.post('/', saveMultipleFile, controller.add);
+router.post('/', controller.add);
 
 // router.route("/:id")
 //    .get(controller.get)
