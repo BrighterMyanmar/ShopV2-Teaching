@@ -47,3 +47,7 @@ Role
  -> Register (app.js)
 
 
+ User Register, Login
+ Validation 
+
+
