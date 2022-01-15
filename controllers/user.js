@@ -24,6 +24,7 @@ let login = async (req, res, next) => {
       if (Helper.comparePass(req.body.password, phoneUser.password)) {
          let user = phoneUser.toObject();
          delete user.password;
+         user.token = Helper.makeToken(user);
          Helper.fMsg(res, "Login Success", user);
       } else {
          next(new Error("Creditial Error"));
@@ -45,8 +46,24 @@ let patch = async (req, res, next) => {
    } else next(new Error("No User with that id!"));
 }
 
+let addRole = async (req, res, next) => {
+   let roleId = req.body.roleId;
+
+   let user = await DB.findById(req.body.userId);
+
+   let found = user.roles.find(role => role == roleId);
+   if (found) {
+      next(new Error("Role is already in user"));
+   } else {
+      await DB.findByIdAndUpdate(user._id, { $push: { roles: roleId } });
+      Helper.fMsg(res, "Role Added to User");
+   }
+
+}
+
 module.exports = {
    register,
    login,
-   patch
+   patch,
+   addRole
 }

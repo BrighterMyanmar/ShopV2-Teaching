@@ -22,16 +22,21 @@ let deliveryRouter = require('./routes/delivery');
 let warrantyRouter = require('./routes/warranty');
 let productRouter = require('./routes/product');
 let apiRouter = require('./routes/api');
+let userRouter = require('./routes/user');
 
-app.use('/cats', catRouter);
-app.use('/subcats', subcatRouter);
-app.use('/childcats', chidcatRouter);
-app.use('/tags', tagRouter);
-app.use('/permits', permitRouter);
-app.use('/roles', roleRouter);
-app.use('/deliveries', deliveryRouter);
-app.use('/warranties', warrantyRouter);
-app.use('/products', productRouter);
+let { validateToken, validateRole } = require('./utils/validator');
+
+app.use('/cats', [validateToken(), validateRole("Owner"),  catRouter]);
+app.use('/subcats', [validateToken(), validateRole("Owner"),  subcatRouter]);
+app.use('/childcats', [validateToken(), validateRole("Owner"),  chidcatRouter]);
+app.use('/tags', [validateToken(), validateRole("Owner"),  tagRouter]);
+app.use('/permits', [validateToken(), validateRole("Owner"),  permitRouter]);
+app.use('/roles', [validateToken(), validateRole("Owner"),  roleRouter]);
+app.use('/deliveries', [validateToken(), validateRole("Owner"),  deliveryRouter]);
+app.use('/warranties', [validateToken(), validateRole("Owner"),  warrantyRouter]);
+app.use('/products', [validateToken(), validateRole("Owner"),  productRouter]);
+app.use('/users', [validateToken(), validateRole("Owner"), userRouter]);
+
 app.use('/api', apiRouter);
 
 app.use((err, req, res, next) => {

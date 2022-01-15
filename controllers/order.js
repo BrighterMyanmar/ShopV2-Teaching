@@ -4,6 +4,7 @@ const ProductDB = require('../models/product');
 const Helper = require('../utils/helper');
 
 let add = async (req, res, next) => {
+   let authUser = req.body.user;
    let items = req.body.items;
 
    let saveOrder = new DB();
@@ -29,7 +30,7 @@ let add = async (req, res, next) => {
    let orderItemIds = orderItemsResults.map(oitem => oitem._id);
 
    saveOrder.count = orderItemIds.length;
-   saveOrder.user = "61d968bf3493f17007179d8c";
+   saveOrder.user = authUser._id;
    saveOrder.total = orderTotal;
    saveOrder.items = orderItemIds;
 
@@ -39,9 +40,10 @@ let add = async (req, res, next) => {
 
 }
 
-let getMyOrders = async(req,res,next) =>{
-   let orders = await DB.find({user:"61d968bf3493f17007179d8c"});
-   Helper.fMsg(res,"All My Orders",orders);
+let getMyOrders = async (req, res, next) => {
+   let authUser = req.body.user;
+   let orders = await DB.find({ user: authUser._id });
+   Helper.fMsg(res, "All My Orders", orders);
 }
 
 module.exports = {
