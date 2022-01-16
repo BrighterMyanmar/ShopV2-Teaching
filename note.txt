@@ -50,4 +50,14 @@ Role
  User Register, Login
  Validation 
 
+ SSC => Socket Programming
+
+ TCP => HTTP
+
+ User => Socket SSC <= Server
+
+ A => B 
+  A emit => B on
+  B emit => A on
+
 
